@@ -18,7 +18,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 import string
-from _crack import *
+from _crack import FascistCheck, default_dictpath
 
 ascii_uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 ascii_lowercase = "abcdefghijklmnopqrstuvwxyz"
