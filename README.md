@@ -21,7 +21,7 @@ Installation
 Installing _crack_ is simple with pip:
 
 ~~~
-$ pip install git@github.com:jexhson/python-crack.git --install-option='--dictpath=/path/to/dict'
+$ pip install -e git+https://github.com:jexhson/python-crack.git#egg=python-crack --install-option='--dictpath=/path/to/dict'
 ~~~
 
 or, directly from the source by running the installation script:
