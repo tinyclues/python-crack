@@ -175,24 +175,24 @@ def VeryFascistCheck(new, old=None, dictpath=None):
 
     if old != None:
         if new == old:
-            raise ValueError, "is the same as the old one"
+            raise ValueError('is the same as the old one')
 
         oldmono = old.lower()
         newmono = new.lower()
         wrapped = old + old
 
         if newmono == oldmono:
-            raise ValueError, "case changes only"
+            raise ValueError('case changes only')
         if wrapped.find(new) != -1:
-            raise ValueError, "is rotated"
+            raise ValueError('is rotated')
         if similar(oldmono, newmono):
-            raise ValueError, "is too similar to the old one"
+            raise ValueError('is too similar to the old one')
 
     FascistCheck(new, dictpath)
 
     if palindrome(new):
-        raise ValueError, "is a palindrome"
+        raise ValueError('is a palindrome')
     if simple(new):
-        raise ValueError, "is too simple"
+        raise ValueError('is too simple')
 
     return new
