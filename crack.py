@@ -38,11 +38,12 @@ def palindrome(s):
     return 1
 
 
-# Calculate how different two strings are in terms of the number of
-# character removals, additions, and changes needed to go from one to
-# the other
-
 def distdifferent(old, new, i, j):
+    '''
+    Calculate how different two strings are in terms of the number of
+    character removals, additions, and changes needed to go from one to
+    the other
+    '''
     if i == 0 or len(old) <= i:
         c = 0
     else:
