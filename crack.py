@@ -97,10 +97,19 @@ def distance(old, new):
 
 
 def similar(old, new):
-    if distance(old, new) >= diff_ok:
+    '''
+    Determines if two passwords are similar by calculate if 1/2 of the
+    characters in the new password are different from the old one or if the
+    distance between them is acceptable
+
+    Accepted distance difference is defined by `diff_ok`, the number of
+    characters in the new password that must not be present in the old
+    password.
+    '''
+    if len(new) >= (len(old) * 2):
         return 0
 
-    if len(new) >= (len(old) * 2):
+    if distance(old, new) >= diff_ok:
         return 0
 
     # passwords are too similar

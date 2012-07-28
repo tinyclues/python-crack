@@ -83,7 +83,7 @@ static PyMethodDef _crack_methods[] = {
 };
 
 static char _crack_doc[] =
-  "Python bindings for cracklib. Version @VERSION@.\n"
+  "Python bindings for cracklib.\n"
   "\n"
   "This module anables the use of cracklib features from within a Python\n"
   "program or interpreter.\n"
