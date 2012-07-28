@@ -170,6 +170,19 @@ def simple(new):
 
 
 def VeryFascistCheck(new, old=None, dictpath=None):
+    '''
+    Behaves like FascistCheck but performs also checks for palindrome and
+    simple passwords.
+
+    If the optional old_password is provided additional checks for minimum
+    distance between the two passwords, for similarity, for change of case
+    only and for rotation are performed.
+
+    Exception ValueError is raised in case of weak password.
+
+    dictpath parameter is used only for the inner call to FascistCheck, hence
+    it has the same signification it has for FascistCheck.
+    '''
     if dictpath == None:
         dictpath = default_dictpath
 
