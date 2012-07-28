@@ -1,5 +1,7 @@
-# python-crack - Python bindings for cracklib
+# python-crack - CPython libcrack wrapper
+#
 # Copyright (C) 2003 Domenico Andreoli
+# Copyright (C) 2012 Alexandre Joseph
 #
 # This file is part of python-crack.
 #
@@ -12,10 +14,6 @@
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with Prua; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 from _crack import FascistCheck, default_dictpath
 
