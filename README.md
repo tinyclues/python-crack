@@ -20,11 +20,15 @@ Installation
 
 Installing _crack_ is simple with pip:
 
-   $ pip install git@github.com:jexhson/python-crack.git --install-option='--dictpath=/path/to/dict'
+~~~
+$ pip install git@github.com:jexhson/python-crack.git --install-option='--dictpath=/path/to/dict'
+~~~
 
 or, directly from the source by running the installation script:
 
-   $ python setup.py install --dictpath=/path/to/dict
+~~~
+$ python setup.py install --dictpath=/path/to/dict
+~~~
 
 `--dictpath` specify the default dictionary crack will be using to perform it
 check. If none specified, make sure to specify one each time you call crack.
@@ -113,6 +117,7 @@ Authors
 =======
 
 Originally written by Domenico Andreoli <cavok@filibusta.crema.unimi.it>
+
 Small improvements, updates and packaging by Alexandre Joseph
 <http://www.alexandrejoseph.com>
 
