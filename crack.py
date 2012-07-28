@@ -32,7 +32,7 @@ oth_credit = 1
 
 
 def palindrome(s):
-    for i in range(len(s)):
+    for i in xrange(len(s)):
         if s[i] != s[-i - 1]:
             return 0
     return 1
@@ -77,20 +77,20 @@ def distance(old, new):
     m = len(old)
     n = len(new)
 
-    distances = [[] for i in range(m + 1)]
-    for i in range(m + 1):
-        distances[i] = [-1 for j in range(n + 1)]
+    distances = [[] for i in xrange(m + 1)]
+    for i in xrange(m + 1):
+        distances[i] = [-1 for j in xrange(n + 1)]
 
-    for i in range(m + 1):
+    for i in xrange(m + 1):
         distances[i][0] = i
-    for j in range(n + 1):
+    for j in xrange(n + 1):
         distances[0][j] = j
     distances[0][0] = 0
 
     r = distcalculate(distances, old, new, m, n)
 
-    for i in range(len(distances)):
-        for j in range(len(distances[i])):
+    for i in xrange(len(distances)):
+        for j in xrange(len(distances[i])):
             distances[i][j] = 0
 
     return r
