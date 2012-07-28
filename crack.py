@@ -39,11 +39,6 @@ def palindrome(s):
 
 
 def distdifferent(old, new, i, j):
-    '''
-    Calculate how different two strings are in terms of the number of
-    character removals, additions, and changes needed to go from one to
-    the other
-    '''
     if i == 0 or len(old) <= i:
         c = 0
     else:
@@ -56,28 +51,35 @@ def distdifferent(old, new, i, j):
 
     return c != d
 
+
 def distcalculate(distances, old, new, i, j):
     tmp = 0
 
     if distances[i][j] != -1:
         return distances[i][j]
 
-    tmp =          distcalculate(distances, old, new, i - 1, j - 1)
-    tmp = min(tmp, distcalculate(distances, old, new, i    , j - 1))
-    tmp = min(tmp, distcalculate(distances, old, new, i - 1, j    ))
+    tmp = distcalculate(distances, old, new, i - 1, j - 1)
+    tmp = min(tmp, distcalculate(distances, old, new, i, j - 1))
+    tmp = min(tmp, distcalculate(distances, old, new, i - 1, j))
     tmp = tmp + distdifferent(old, new, i, j)
 
     distances[i][j] = tmp
 
     return tmp
 
+
 def distance(old, new):
+    '''
+    Calculate how different two strings are in terms of the number of
+    character removals, additions, and changes needed to go from one to
+    the other
+    '''
     m = len(old)
     n = len(new)
 
-    distances = [ [] for i in range(m + 1) ]
+    distances = [[] for i in range(m + 1)]
     for i in range(m + 1):
-        distances[i] = [ -1 for j in range(n + 1) ]
+        distances[i] = [-1 for j in range(n + 1)]
 
     for i in range(m + 1):
         distances[i][0] = i
@@ -92,6 +94,7 @@ def distance(old, new):
             distances[i][j] = 0
 
     return r
+
 
 def similar(old, new):
     if distance(old, new) >= diff_ok:
@@ -165,7 +168,8 @@ def simple(new):
 
     return 0
 
-def VeryFascistCheck(new, old = None, dictpath = None):
+
+def VeryFascistCheck(new, old=None, dictpath=None):
     if dictpath == None:
         dictpath = default_dictpath
 
