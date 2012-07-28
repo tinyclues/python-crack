@@ -155,16 +155,16 @@ def simple(new):
         else:
             others = others + 1
 
-    if digits > dig_credit:
+    if dig_credit >= 0 and digits > dig_credit:
         digits = dig_credit
 
-    if uppers > up_credit:
+    if up_credit >= 0 and uppers > up_credit:
         uppers = up_credit
 
-    if lowers > low_credit:
+    if low_credit >= 0 and lowers > low_credit:
         lowers = low_credit
 
-    if others > oth_credit:
+    if oth_credit >= 0 and others > oth_credit:
         others = oth_credit
 
     size = min_length
@@ -209,10 +209,10 @@ def VeryFascistCheck(new, old=None, dictpath=None):
     dictpath parameter is used only for the inner call to FascistCheck, hence
     it has the same signification it has for FascistCheck.
     '''
-    if dictpath == None:
+    if not dictpath:
         dictpath = default_dictpath
 
-    if old != None:
+    if old:
         if new == old:
             raise ValueError('is the same as the old one')
 
