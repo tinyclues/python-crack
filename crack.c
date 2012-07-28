@@ -1,5 +1,7 @@
-/* python-crack - Python bindings for cracklib
+/* python-crack - CPython libcrack wrapper
+ *
  * Copyright (C) 2003 Domenico Andreoli
+ * Copyright (C) 2012 Alexandre Joseph
  *
  * This file is part of python-crack.
  *
@@ -12,16 +14,10 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with Prua; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
 #include <Python.h>
 #include <crack.h>
-#include <stdio.h>
-#include <unistd.h>
 #include <fcntl.h>
 
 #define FILENAME_MAXLEN 512
@@ -29,17 +25,14 @@
 static char const DEFAULT_DICTPATH[] = DICTPATH;
 
 static char _crack_FascistCheck_doc [] =
-  "arguments: passwd, dictpath (optional)\n"
+  "Maps the homonym cracklib function with few differences.\n"
   "\n"
-  "  passwd - password to be checked for weakness\n"
-  "  dictpath - full path name to the cracklib dictionary database\n"
+  "First, it always returns the given passwd. If it is found to be weak \
+  ValueError exception is raised with parameter set to the reason returned by \
+  cracklib's FascistCheck.\n"
   "\n"
-  "if dictpath is not specified value of CRACKLIB_DICTPATH will be used.\n"
-  "\n"
-  "return value: the same password passed as first argument.\n"
-  "\n"
-  "if password is weak, exception ValueError is raised with argument\n"
-  "set to the reason of weakness.\n"
+  "Second, dictpath parameter is optional. If it is not specified the default \
+  one, determined at build time, is used. See default_dictpath variable.\n"
 ;
 
 static PyObject* _crack_FascistCheck(PyObject* self, PyObject* args)
@@ -83,7 +76,7 @@ static PyMethodDef _crack_methods[] = {
 };
 
 static char _crack_doc[] =
-  "Python bindings for cracklib.\n"
+  "CPython libcrack wrapper.\n"
   "\n"
   "This module anables the use of cracklib features from within a Python\n"
   "program or interpreter.\n"
