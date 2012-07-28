@@ -60,6 +60,15 @@ setup(name='python-crack',
       license='GPLv2+',
       version='0.6',
       ext_modules=modules,
+      classifiers=[
+        'Development Status :: 5 - Production/Stable',
+        'License :: OSI Approved :: GNU General Public License (GPL)',
+        'Operating System :: Unix',
+        'Programming Language :: C',
+        'Programming Language :: Python',
+        'Topic :: Security',
+        'Topic :: Software Development :: Libraries :: Python Modules',
+      ],
       long_description='''\
 python-crack is a CPython extension providing a Python binding for cracklib
 library. It provides a crack python module that exposes a simple interface to
