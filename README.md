@@ -21,10 +21,10 @@ Installation
 Installing _crack_ is simple with pip:
 
 ~~~
-$ pip install -e git+https://github.com:jexhson/python-crack.git#egg=python-crack --install-option='--dictpath=/path/to/dict'
+$ pip install -e git+https://github.com/jexhson/python-crack.git#egg=python-crack --install-option='--dictpath=/path/to/dict'
 ~~~
 
-or, directly from the source by running the installation script:
+or, directly from the sources by running the installation script:
 
 ~~~
 $ python setup.py install --dictpath=/path/to/dict
