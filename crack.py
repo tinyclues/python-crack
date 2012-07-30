@@ -17,7 +17,7 @@
 
 from _crack import FascistCheck, default_dictpath
 
-digits = '0123456789'
+string_digits = '0123456789'
 ascii_uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 ascii_lowercase = 'abcdefghijklmnopqrstuvwxyz'
 
@@ -146,7 +146,7 @@ def simple(new):
     others = 0
 
     for c in new:
-        if c in digits:
+        if c in string_digits:
             digits = digits + 1
         elif c in ascii_uppercase:
             uppers = uppers + 1
