@@ -1,0 +1,4 @@
+include crack.c
+include crack.py
+include setup.py
+include README.md
