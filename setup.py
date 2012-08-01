@@ -54,11 +54,12 @@ modules = [
 ]
 
 setup(name='python-crack',
+      version='0.6.1',
       description='CPython libcrack wrapper',
       author='Alexandre Joseph',
       url='https://github.com/jexhson/python-crack',
       license='GPLv2+',
-      version='0.6',
+      py_modules=['crack'],
       ext_modules=modules,
       classifiers=[
         'Development Status :: 5 - Production/Stable',
