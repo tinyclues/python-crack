@@ -16,7 +16,7 @@
 # GNU General Public License for more details.
 
 import sys
-from os.path import isfile
+from os import listdir
 from distutils.core import setup, Extension
 
 
@@ -37,10 +37,10 @@ def get_dict_path():
     if not dictpath:
         print('WARNING: No default dictionary specified.' +
               'Use --dictpath to specify one')
-    elif not any([isfile('%s.%s' % (dictpath, ext))
-                for ext in ('hwm', 'pwd', 'pwi')]):
+    elif not any([file for file in listdir(dictpath)
+                if file.endswith(('hwm', 'pwd', 'pwi'))]):
         print('WARNING: Dictionary is not packed correctly, ' +
-              'not able to find one of %s.(hwm|pwd|pwi)' % dictpath)
+              'not able to find one of *.(hwm|pwd|pwi) in %s' % dictpath)
     return dictpath
 
 
