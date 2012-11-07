@@ -15,8 +15,8 @@
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
 
+import os
 import sys
-from os import listdir
 from distutils.core import setup, Extension
 
 
@@ -37,7 +37,7 @@ def get_dict_path():
     if not dictpath:
         print('WARNING: No default dictionary specified.' +
               'Use --dictpath to specify one')
-    elif not any([file for file in listdir(dictpath)
+    elif not any([file for file in os.listdir(os.path.dirname(dictpath))
                 if file.endswith(('hwm', 'pwd', 'pwi'))]):
         print('WARNING: Dictionary is not packed correctly, ' +
               'not able to find one of *.(hwm|pwd|pwi) in %s' % dictpath)
